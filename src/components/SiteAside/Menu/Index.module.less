@@ -1,0 +1,24 @@
+@import "@/assets/css/var.less";
+.container{
+    color: @gray;
+    margin: 24px 0;
+
+    a{
+        display: flex;
+        padding: 0 50px;
+        align-items: center;
+        height: 45px;
+
+        .icon{
+            width: 24px;
+        }
+
+        &:hover{
+            color: #fff;
+        }
+
+        &.active{
+            background-color: #2d2d2d;
+        }
+    }
+}

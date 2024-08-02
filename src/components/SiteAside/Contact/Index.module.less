@@ -1,0 +1,59 @@
+@import "@/assets/css/var.less";
+.container{
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    color: @gray;
+    @itemHeight: 30px;
+    li{
+        height: @itemHeight;
+        margin: 14px 0;
+        position: relative;
+
+        &:hover{
+            .pop{
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    .icon{
+        font-size: 26px;
+        width: 36px;
+    }
+
+    a{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .pop{
+        position: absolute;
+        left: 0;
+        bottom: @itemHeight + 5px;
+        padding: 10px 15px;
+        background-color: #fff;
+        border-radius: 5px;
+
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        transform: scaleY(0);
+        transform-origin: center bottom;
+        transition: 0.3s;
+
+        &::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -4px;
+            transform: translateX(-50%) rotate(45deg);
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+        }
+    }
+}
