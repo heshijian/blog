@@ -1,0 +1,87 @@
+@import '@/assets/css/mixin.less';
+@import '@/assets/css/var.less';
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    ul {
+        margin: 0;
+        list-style: none;
+    }
+    overflow: hidden;
+}
+
+.carouselContainer{
+    height: 100%;
+    transition: 500ms;
+    li{
+        height: 100%;
+    }
+}
+
+.icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 30px;
+    color: @gray;
+
+    @gap: 10px;
+    &.iconUp {
+        top: @gap;
+        bottom: auto;
+        animation: jump-up 2s infinite;
+    }
+
+    &.iconDown {
+        bottom: @gap;
+        top: auto;
+        animation: jump-down 2s infinite;
+    }
+
+    @step: 5px;
+    @keyframes jump-up {
+        0% {
+            transform: translate(-50%, @step);
+        }
+        50% {
+            transform: translate(-50%, -@step);
+        }
+        100% {
+            transform: translate(-50%, @step);
+        }
+    }
+    @keyframes jump-down {
+        0% {
+            transform: translate(-50%, -@step);
+        }
+        50% {
+            transform: translate(-50%, @step);
+        }
+        100% {
+            transform: translate(-50%, -@step);
+        }
+    }
+}
+
+.indicator {
+    .self-center();
+    // transform: translateY(-50%);
+    left: auto;
+    right: 25px;
+    li {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: @words;
+        cursor: pointer;
+        margin-bottom: 10px;
+        border: 1px solid #fff;
+        box-sizing: border-box;
+        &.active {
+            background: #fff;
+        }
+    }
+}

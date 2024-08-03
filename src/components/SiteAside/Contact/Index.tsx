@@ -9,7 +9,7 @@ function Index(props) {
             <li>
                 <a>
                     <div className={styles.icon}>
-                        <Icon type="github" />
+                        <Icon type="github"/>
                     </div>
                     <span>hechengxu</span>
                 </a>
@@ -17,7 +17,7 @@ function Index(props) {
             <li>
                 <a href='mailto:m18303667987@163.com'>
                     <div className={styles.icon}>
-                        <Icon type="email" />
+                        <Icon type="email"/>
                     </div>
                     <span>m18303667987@163.com</span>
                 </a>
@@ -25,7 +25,7 @@ function Index(props) {
             <li>
                 <a>
                     <div className={styles.icon}>
-                        <Icon type="QQ" />
+                        <Icon type="QQ"/>
                     </div>
                     <span>1452369310</span>
                 </a>
@@ -33,7 +33,7 @@ function Index(props) {
             <li>
                 <a>
                     <div className={styles.icon}>
-                        <Icon type="weixin" />
+                        <Icon type="weixin"/>
                     </div>
                     <span>hechengxu</span>
                 </a>

@@ -1,0 +1,36 @@
+@import '@/assets/css/var.less';
+.container {
+    position: relative;
+    overflow: hidden;
+}
+.img {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: 0;
+    top: 0;
+    transition: 0.1s;
+}
+
+.title,
+.desc {
+    position: absolute;
+    left: 30px;
+    color: #fff;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0.5), -1px 0 0 rgba(0, 0, 0, 0.5),
+        0 1px 0 rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.title {
+    top: calc(50% - 40px);
+    font-size: 2em;
+}
+
+.desc {
+    top: calc(50% + 20px);
+    font-size: 1.2em;
+    color: lighten(@gray, 20%);
+}

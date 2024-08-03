@@ -6,7 +6,7 @@ import Icon from '@/components/Icon/Index';
 function Index({ text = '无数据' }) {
     return (
         <div className={styles.container}>
-            <Icon type="empty" style={{ fontSize: '72px' }} />
+            <Icon type="empty" />
             <p>{text}</p>
         </div>
     );

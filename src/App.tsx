@@ -10,7 +10,7 @@ import styles from './App.module.less';
 import SiteAside from '@/components/SiteAside/Index';
 import Layout from '@/components/Layout/Index';
 
-import RouterConfig from '@/router/index'
+import RouterConfig from '@/router/index';
 
 function App() {
     const [total, setTotal] = useState(300);
@@ -100,11 +100,7 @@ function App() {
                                 <SiteAside />
                             </div>
                         ),
-                        main: (
-                            <div className={styles.main}>
-                                <RouterConfig />
-                            </div>
-                        ),
+                        main: <RouterConfig />,
                         // right: <div className={styles.right}>右边栏区域</div>,
                     }}
                 </Layout>

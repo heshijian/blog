@@ -12,5 +12,12 @@ export default defineConfig({
             replacement: resolve(__dirname, './src')
         }
     ]
-  }
+  },
+//   server: {
+//     proxy: {
+//         '/api': {
+//             target: 'http://'
+//         }
+//     }
+//   }
 })

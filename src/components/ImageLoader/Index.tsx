@@ -6,11 +6,12 @@ function Index({
     src,
     placeholder,
     duration = 500,
-    loaded = () => {},
+    loaded,
 }: {
     src: string;
     placeholder: string;
     duration?: number;
+    loaded: () => void;
 }) {
     const [opacity, setOpacity] = useState(0);
     const [showPlaceholder, setShowPlaceholder] = useState(true);
@@ -20,7 +21,6 @@ function Index({
             loaded();
         }, duration);
         setOpacity(1);
-        
     }
     return (
         <div className={styles.container}>
