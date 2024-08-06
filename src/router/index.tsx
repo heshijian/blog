@@ -11,6 +11,7 @@ export default function RouteConfig() {
         <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/blog/cate/:categoryId" element={<Blog />}></Route>
             <Route path="/blog/:id" element={<BlogDetail />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/message" element={<Message />}></Route>

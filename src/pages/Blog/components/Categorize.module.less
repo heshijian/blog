@@ -1,0 +1,31 @@
+@import '@/assets/css/var.less';
+.container {
+    list-style: none;
+    overflow-y: scroll;
+
+    .container {
+        margin-left: 1em;
+    }
+}
+
+.item {
+    min-height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0;
+    border: 0;
+    .selected {
+        color: @warn;
+        font-weight: bold;
+    }
+
+    span+span{
+        margin-left: 1em;
+        color: @gray;
+    }
+}
+
+.selected {
+    // color: red;
+}

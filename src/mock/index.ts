@@ -1,6 +1,6 @@
 import "./banner";
-// import "./blog";
+import "./blog";
 import Mock from "mockjs";
 Mock.setup({
-  timeout: "300",
+  timeout: "500",
 });

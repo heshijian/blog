@@ -1,10 +1,4 @@
-import React, {
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-    useLayoutEffect,
-} from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import useApi from '@/hooks/useApi';
 import styles from './Index.module.less';
 import { getBanners } from '@/api/banner';
@@ -25,21 +19,22 @@ export default function Index() {
     const [banners, setBanners] = useState<BannerItem[]>([]);
     // 当前第几张
     const [index, setIndex] = useState(0);
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [containerHeight, setContainerHeight] = useState(0);
     const [switching, setSwitching] = useState(false);
     const [loading, getApi] = useApi(getBanners);
     const marginTop = useMemo(() => {
         return -index * containerHeight;
     }, [index, containerHeight]);
-    // console.log(loading);
 
     useEffect(() => {
-        containerRef.current && setContainerHeight(containerRef.current.clientHeight);
+        containerRef.current &&
+            setContainerHeight(containerRef.current.clientHeight);
+
         async function fetData() {
             const { data } = await getApi();
             if (data.length > 0) {
-                data.forEach((item, idx) => {
+                (data as BannerItem[]).forEach((item, idx) => {
                     if (idx === 0) {
                         item.loaded = true;
                     } else {
@@ -53,13 +48,14 @@ export default function Index() {
 
         // 窗口resize 重新计算
         const resizeHandler = function () {
-            setContainerHeight(containerRef.current.clientHeight);
+            containerRef.current &&
+                setContainerHeight(containerRef.current.clientHeight);
         };
         window.addEventListener('resize', resizeHandler);
         return () => {
             window.removeEventListener('resize', resizeHandler);
         };
-    }, [containerRef]);
+    }, []);
 
     function changeIndex(idx: number) {
         if (!banners[idx].loaded) {
@@ -70,7 +66,7 @@ export default function Index() {
         setIndex(idx);
     }
 
-    function onWheel(e) {
+    function onWheel(e: any) {
         if (switching) return;
 
         if (e.deltaY < -5 && index > 0) {
@@ -82,7 +78,7 @@ export default function Index() {
         }
     }
 
-    function ulTransitionEnd(e) {
+    function ulTransitionEnd() {
         setSwitching(false);
     }
 

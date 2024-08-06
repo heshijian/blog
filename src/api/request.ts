@@ -19,3 +19,8 @@ ins.interceptors.response.use((response) => {
 });
 
 export default ins
+export type Res = {
+    code: number,
+    msg: string,
+    data: any
+}

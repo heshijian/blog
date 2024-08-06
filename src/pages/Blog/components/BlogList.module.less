@@ -1,0 +1,50 @@
+@import "@/assets/css/var.less";
+.container {
+    line-height: 1.7;
+    position: relative;
+    padding: 20px;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: 1px solid @gray;
+        .thumb {
+          flex: 0 0 auto;
+          margin-right: 15px;
+          img {
+            display: block;
+            max-width: 200px;
+            border-radius: 5px;
+          }
+        }
+        .main {
+          flex: 1 1 auto;
+          h2 {
+            margin: 0;
+          }
+        }
+        .aside {
+          font-size: 12px;
+          color: @gray;
+          span {
+            margin-right: 15px;
+          }
+        }
+        .desc {
+          margin: 15px 0;
+          font-size: 14px;
+        }
+      }
+  }
+
+  

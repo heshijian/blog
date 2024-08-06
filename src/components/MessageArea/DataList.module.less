@@ -1,0 +1,31 @@
+@import "@/assets/css/var.less";
+.container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        display: flex;
+        border-bottom: 1px solid lighten(@gray, 20%);
+        padding: 15px 0;
+    }
+    
+    .nickname {
+        color: darken(@success, 10%);
+        margin-bottom: 10px;
+    }
+    .content {
+        font-size: 14px;
+    }
+    .data {
+        margin-left: 15px;
+        flex: 1 1 auto;
+        position: relative;
+    }
+    .time {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        font-size: 12px;
+        color: @gray;
+    }
+}

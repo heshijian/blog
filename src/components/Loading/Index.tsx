@@ -2,20 +2,27 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import loadingSvg from '@/assets/image/loading.svg';
 
-function Index({ loading = true, children }) {
-    const ref = useRef(null);
+interface Props {
+    loading: boolean;
+    children?: React.ReactNode;
+}
+
+const Index: React.FC<Props> = function ({ loading = true, children }) {
+    const ref = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        console.log(children);
         if (
             loading &&
-            getComputedStyle(ref.current.parentNode).position === 'static'
+            ref.current &&
+            ref.current.parentNode &&
+            getComputedStyle(ref.current.parentNode as HTMLElement).position ===
+                'static'
         ) {
-            ref.current.parentNode.style.position = 'relative';
+            (ref.current.parentNode as HTMLElement).style.position = 'relative';
         }
     }, [loading]);
     return (
         <>
-            {children && { ...children }}
+            {children && children}
             {loading && (
                 <div
                     ref={ref}
@@ -31,7 +38,6 @@ function Index({ loading = true, children }) {
                     <img
                         src={loadingSvg}
                         alt=""
-                        ref={ref}
                         style={{
                             position: 'absolute',
                             top: '50%',
@@ -43,8 +49,10 @@ function Index({ loading = true, children }) {
             )}
         </>
     );
-}
+};
 
-Index.propTypes = {};
+Index.propTypes = {
+    loading: PropTypes.bool.isRequired,
+};
 
 export default Index;
